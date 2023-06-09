@@ -10,7 +10,7 @@ actions:
     link: /guide/
     type: secondary
 ---
-# Hello hui
+# Hello people
 [[toc]]
 
 ## header 1
