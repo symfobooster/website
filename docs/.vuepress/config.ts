@@ -1,6 +1,6 @@
 import { defineUserConfig } from '@vuepress/cli'
 import { defaultTheme } from '@vuepress/theme-default'
-import { head, navbarEn, navbarRu } from './head/index';
+import { head, navbarEn, navbarRu, sidebarRu } from './head/index';
 
 export default defineUserConfig({
     title: 'Hello Symfobooster',
@@ -54,15 +54,15 @@ export default defineUserConfig({
                 selectLanguageText: 'Русский',
                 selectLanguageAriaLabel: 'Русский',
                 // sidebar
-                // sidebar: sidebarRu,
+                sidebar: sidebarRu,
                 // page meta
                 editLinkText: 'Отредактируй это на GitHub-e',
                 lastUpdatedText: 'Страница обновлена',
-                contributorsText: 'fewqgewq',
+                contributorsText: 'Автор',
                 // custom containers
-                tip: 'frewgrew',
-                warning: 'ewfqgfewge',
-                danger: 'grewgrewgr',
+                tip: 'Информация',
+                warning: 'Замечание',
+                danger: 'Внимание!',
                 // 404 page
                 notFound: [
                     'Страница не найдена',

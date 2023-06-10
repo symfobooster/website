@@ -8,6 +8,7 @@ export const navbarRu: NavbarConfig = [
             {
                 text: 'Основа',
                 children: [
+                    '/symfobooster/getting-started.md',
                     '/symfobooster/concepts.md',
                     '/symfobooster/input.md',
                     '/symfobooster/service.md',
