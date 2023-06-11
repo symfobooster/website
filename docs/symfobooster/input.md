@@ -3,6 +3,7 @@
 Инпут отвечает за входящие данные. Здесь вы можете получить данные из разных источников, таких как:
 1. тело запроса
 1. гет-параметры
+2. адрес эндпоинта
 1. файлы
 1. куки
 1. серверные переменные
@@ -11,6 +12,11 @@
 Создайте файл инпута и реализуйте его от InputInterface.  
 Добавте необходимые свойства и укажите источники днных в виде аннотаций.  
 Опишите валидаторы.
+
+::: tip
+Вы можете не указывать источник данных, если он соответствует методу запроса. Для метогда GET данные будут взяты
+из get-параметров, для всех остальных из тела запроса.
+:::
 
 Пример:
 
@@ -56,7 +62,7 @@ class RegistrationInput implements InputInterface
     #[Source('query')]
     public string $id;
 ```
-0053A6
+
 ## Переименование полей
 Переименование полей позволяет разорвать связь между входящими полями и их названиями используемыми в коде.
 Аннотация `Zabachok\Symfobooster\Input\Attributes\Renamed` позволяет указать название поле из входящих данных.
@@ -77,3 +83,98 @@ class RegistrationInput implements InputInterface
     #[Muted]
     public string $referer;
 ```
+
+## Вложенные инпуты
+
+Если у вас сложная форма запроса, например пир создании какой-то модели у которой много полей, которые нужно удобно структурировать,
+то вы можете вкладывать объекты друг в друга. Просто используйте типизацию для обозначения, что это свойство должно быть объектом.
+
+Рассмотрим пример двух инпутов, когда один вложен в другой.
+
+```php
+<?php
+
+namespace App\Product\Create;
+
+use Symfony\Component\Validator\Constraint;
+use Zabachok\Symfobooster\Input\InputInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+class Product implements InputInterface
+{
+    public string $name;
+    public int $price;
+    public Image $image;
+
+    public function getValidators(): Constraint
+    {
+        return new Assert\Collection([
+            'email' => [
+                new Assert\Required(),
+                new Assert\NotNull(),
+                new Assert\Email(),
+            ],
+            'price' => [
+                new Assert\Required(),
+                new Assert\NotNull(),
+                new Assert\Type('int'),
+                new Assert\Length(['min' => 1]),
+            ],
+            'image' => [
+                new Assert\Required(),
+                new Assert\NotNull(),
+            ],
+        ]);
+    }
+}
+```
+
+И модель изображения:
+```php
+<?php
+
+namespace App\Product\Create;
+
+use Symfony\Component\Validator\Constraint;
+use Zabachok\Symfobooster\Input\InputInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+class Image implements InputInterface
+{
+    public string $src;
+    public string $description;
+
+    public function getValidators(): Constraint
+    {
+        return new Assert\Collection([
+            'src' => [
+                new Assert\Required(),
+                new Assert\NotNull(),
+                new Assert\Url(),
+            ],
+            'description' => [
+                new Assert\Required(),
+                new Assert\NotNull(),
+                new Assert\Type('string'),
+                new Assert\Length(['min' => 3, 'max' => 1000]),
+            ],
+        ]);
+    }
+}
+```
+
+Тело запроса для таких инпутов будет выглядеть так:
+```json
+{
+  "name": "Awesome elephant",
+  "price": 10000,
+  "image": {
+    "src": "https://awesome-site.com/pictures/awesome-elephant.png",
+    "description": "Awesome elephant"
+  }
+}
+```
+
+## Валидаторы
+##
+##
