@@ -31,7 +31,6 @@ export const sidebarRu: SidebarConfig = {
     '/template/': [
         {
             text: 'Руководство',
-            collapsible: true,
             children: [
                 '/template/getting-started.md',
             ],
