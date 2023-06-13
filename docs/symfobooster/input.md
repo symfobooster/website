@@ -176,5 +176,3 @@ class Image implements InputInterface
 ```
 
 ## Валидаторы
-##
-##
