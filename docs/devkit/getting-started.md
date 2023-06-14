@@ -3,7 +3,7 @@
 Установите Symfobooster в свой проект используя Composer
 
 ```bash
-composer require symfobooster/base
+composer require symfobooster/devkit
 ```
 
 ::: tip
@@ -13,11 +13,12 @@ composer require symfobooster/base
 
 Добавьте бандл в конфиг Symfony  
 // config/bundles.php
-```php{5}
+```php{6}
 <?php
 
 return [
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
     Symfobooster\Base\SymfoboosterBundle::class => ['all' => true],
+    Symfobooster\Devkit\DevkitBundle::class => ['dev' => true],
 ];
 ```

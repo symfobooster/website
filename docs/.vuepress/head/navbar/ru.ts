@@ -5,7 +5,7 @@ export const navbarRu: NavbarConfig = [
         text: 'Symfobooster',
         children: [
             {
-                text: 'Основа',
+                text: 'Руководство',
                 children: [
                     '/symfobooster/getting-started.md',
                     '/symfobooster/concepts.md',
@@ -33,6 +33,7 @@ export const navbarRu: NavbarConfig = [
             {
                 text: 'Генераторы кода',
                 children: [
+                    '/devkit/getting-started.md',
                     '/devkit/generator.md',
                 ],
             },

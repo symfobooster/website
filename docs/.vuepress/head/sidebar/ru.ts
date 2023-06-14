@@ -22,11 +22,10 @@ export const sidebarRu: SidebarConfig = {
         {
             text: 'Руководство',
             children: [
-                '/devkit/architecture.md',
-                '/devkit/plugin.md',
-                '/devkit/theme.md',
+                '/devkit/getting-started.md',
+                '/devkit/generator.md',
             ],
-        },,
+        },
     ],
     '/template/': [
         {

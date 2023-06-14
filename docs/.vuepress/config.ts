@@ -21,7 +21,7 @@ export default defineUserConfig({
     theme: defaultTheme({
         logo: '/logo-light.svg',
         logoDark: '/logo-dark.svg',
-        repo: 'symfobooster/website',
+        repo: 'symfobooster',
         docsDir: 'docs',
 
         // theme-level locales config
@@ -54,7 +54,7 @@ export default defineUserConfig({
                 selectLanguageText: 'Русский',
                 selectLanguageAriaLabel: 'Русский',
                 // sidebar
-                sidebar: navbarRu,
+                sidebar: sidebarRu,
                 // page meta
                 editLinkText: 'Отредактируй это на GitHub-e',
                 lastUpdatedText: 'Страница обновлена',
