@@ -19,6 +19,6 @@ composer require symfobooster/devkit
 return [
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
     Symfobooster\Base\SymfoboosterBundle::class => ['all' => true],
-    Symfobooster\Devkit\DevkitBundle::class => ['dev' => true],
+    Symfobooster\Devkit\DevkitBundle::class => ['dev' => true, 'test' => true],
 ];
 ```

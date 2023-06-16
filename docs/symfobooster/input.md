@@ -175,4 +175,6 @@ class Image implements InputInterface
 }
 ```
 
-## Валидаторы
+## Валидация
+
+Для осущетвления валидации входящих данных используется пакет [Symfony Validation](https://symfony.com/doc/current/validation.html)
