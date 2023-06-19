@@ -19,3 +19,7 @@ features:
     details: Шаблон для быстрого создания приложения в одну команду
 footer: Apache 2.0 Licensed | Copyright © 2022-present Daniil Romanov
 ---
+
+::: danger
+Библиотека, сопутствующие компоненты и сайт находятся в разработке
+:::
