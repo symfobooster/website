@@ -23,7 +23,17 @@ export const sidebarRu: SidebarConfig = {
             text: 'Руководство',
             children: [
                 '/devkit/getting-started.md',
+                '/devkit/concepts.md',
                 '/devkit/generator.md',
+                '/devkit/manifest.md',
+                '/devkit/manifest-generator.md',
+            ],
+        },
+        {
+            text: 'Команды',
+            children: [
+                '/devkit/command/endpoint.md',
+                '/devkit/command/manifest.md',
             ],
         },
     ],

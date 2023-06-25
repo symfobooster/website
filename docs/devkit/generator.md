@@ -1,20 +1,28 @@
-# Maker
+# Генераторы кода
 
-Using that bundle you can generate your endpoints vary fast. At first you need to copy manifest file:
+Используя этот пакеты вы можете создать новый эндпоинт вашего API очень быстро. Для начала вам нужен манифест.
 
-```bash
-cp vendor/zabachok/symfobooster/manifest-example.yml manifest.yml
+Манифест это yml-файл в котором описаны параметры по которым должен быть сгенерирован эндпоинт. Эндпоинт может быть сгенерирован
+по следующим данным:
+1. Метод (обязательно)
+2. Контроллер (обязательно)
+3. Экшон (обязательно)
+4. Тип эндпоинта
+5. Список входящих данных
+6. Список выходящих данных
+
+::: tip
+Полный список параметров манифеста читай на старнице [Манифест](./manifest.md)
+:::
+
+Описав свой манифест вы можете сгенерировать эндпоинт. Для этого используйте комаду:
+```shell
+bin/console symfobooster:devkit:endpoint
 ```
 
-Change values in manifest.yml and run command to generate files:
-```bash
-./bin/console make:endpoint
-```
-
-If your file have different name then you can use option --manifest to set it:
-```bash
-./bin/console make:endpoint --manifest=my-manifest.yml
-```
+::: tip
+Все опции команды `symfobooster:devkit:endpoint` читай на старнице [Команда endpoint](./command-endpoint.md)
+:::
 
 dry-run - генерировать файлы в отдельную папку  
 force - переписывать файлы
