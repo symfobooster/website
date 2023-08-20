@@ -9,8 +9,8 @@ export default defineUserConfig({
     locales: {
         '/': {
             lang: 'ru-RU',
-            title: '',
-            description: 'Симфобустер',
+            title: 'Symfobooster - библиотека для создания API',
+            description: 'Сделай свой процесс разработки более эффективным используя Symfobooster',
         },
         // '/en/': {
         //     lang: 'en-US',

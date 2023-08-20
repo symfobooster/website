@@ -1,7 +1,7 @@
 ---
 home: true
-title: Title of this page
-description: Description of this page
+title: Symfobooster - библиотека для создания API
+description: Symfobooster - библиотека для создания API
 sidebar: auto
 actions:
   - text: Начать использовать
