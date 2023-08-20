@@ -8,7 +8,7 @@ actions:
     link: /symfobooster/getting-started.html
     type: primary
   - text: Введение
-    link: /general-concepts.html
+    link: /symfobooster/concepts.html
     type: secondary
 features:
   - title: Symfobooster

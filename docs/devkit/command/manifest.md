@@ -4,4 +4,4 @@
 bin/console symfobooster:devkit:manifest [type]
 ```
 
- - `type` тип эндпоинта
+ - `type` тип эндпоинта. Смотри поля манифеста
